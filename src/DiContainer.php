@@ -1,12 +1,14 @@
 <?php
 
-    class DiContainer {
+class DiContainer {
 
-        public function __contstruct(){
+    protected $reg = array();
 
-        }
-
-        public function register(){
-
-        }
+    public function register($name, $className){
+        $this->reg[$name] = $className;
     }
+
+    public function get($name){
+        return $this->reg[$name];
+    }
+}
